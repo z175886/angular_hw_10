@@ -1,0 +1,55 @@
+<h1>
+  Welcome to {{title}}!
+ </h1>
+ <input type="submit" value="my button" (mouseenter)="myMouseEnter()">
+ <div ng-mouseleave="count = count + 1" ng-init="count=0">Mouse over me! 
+  (and mouse away from me...)</div>
+  <h1>
+    Welcome to {{title}}!
+   </h1>
+   <input type='text' (keydown)="myKeyDown($event)">
+   <h1>
+    Welcome to {{title}}!
+   </h1>
+   <input type='text' (keyup)="myKeyUp($event)">
+   <h1>
+    Welcome to {{title}}!
+   </h1>
+   <input type='text' (focus)="myFocusEvent('gainedFocus')"
+   (blur)="myFocusEvent('lostFocus')">
+   <h1>
+    Welcome to {{title}}!
+   </h1>
+   Cut from here:
+   <input [(ngModel)]="myContent" type='text' (cut)="cutEvent(myContent)"><br />
+   Paste in here:
+   <input type='text' [(ngModel)]="myPastedContent" 
+   (paste)="pasteContent(myPastedContent)">
+   Copy in here:
+   <input [(ngModel)]="myContent2" type='text' (copy)="copyevent(myContent)"><br />
+
+<div (mousedown)="myMouseHandler($event, 'mouse down')"
+(mouseup)="myMouseHandler($event, 'mouse up')">
+ This area has<br />
+ mouse-down<br />
+ and<br />
+ mouse-up<br />
+ enabled.
+</div>
+
+<div (mousemove)="myMouseMoveHandler($event, 'mouse move')">
+ This area has<br />
+ mouse move enabled<br />
+</div>
+<p [myHighlight]>Highlight me!</p>
+<p [myHighlight]="'violet'">
+ Highlight me too!
+</p>
+<p [myHighlight]>Highlight me!</p>
+<p [myHighlight]="'violet'">
+ Highlight me too!
+</p>
+<p [myHighlight]="'green'">
+ Third Highlight me too!
+</p>
+
